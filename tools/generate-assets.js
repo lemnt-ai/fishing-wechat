@@ -40,11 +40,11 @@ function generateFish() {
     console.log('\n🐟 Generating fish assets...');
     
     const fishTypes = [
-        { name: 'fish_common_1', color: '#A0A0A0', width: 80, height: 50, label: '小鲤鱼' },
-        { name: 'fish_common_2', color: '#4A90E2', width: 90, height: 55, label: '鲫鱼' },
-        { name: 'fish_rare_1', color: '#50C878', width: 100, height: 60, label: '草鱼' },
-        { name: 'fish_rare_2', color: '#9B59B6', width: 110, height: 65, label: '鲤鱼王' },
-        { name: 'fish_epic', color: '#FFD700', width: 120, height: 70, label: '金龙鱼' },
+        { name: 'fish_common_1', color: 'rgb(160, 160, 160)', width: 80, height: 50, label: '小鲤鱼' },
+        { name: 'fish_common_2', color: 'rgb(74, 144, 226)', width: 90, height: 55, label: '鲫鱼' },
+        { name: 'fish_rare_1', color: 'rgb(80, 200, 120)', width: 100, height: 60, label: '草鱼' },
+        { name: 'fish_rare_2', color: 'rgb(155, 89, 182)', width: 110, height: 65, label: '鲤鱼王' },
+        { name: 'fish_epic', color: 'rgb(255, 215, 0)', width: 120, height: 70, label: '金龙鱼' },
         { name: 'fish_legendary', color: 'rainbow', width: 140, height: 80, label: '神秘鱼' }
     ];
     
@@ -52,23 +52,29 @@ function generateFish() {
         const canvas = createCanvas(fish.width, fish.height);
         const ctx = canvas.getContext('2d');
         
+        // 清除画布（设置为透明）
+        ctx.clearRect(0, 0, fish.width, fish.height);
+        
         // 绘制鱼身体（流线型）
         ctx.beginPath();
         ctx.ellipse(fish.width/2, fish.height/2, fish.width/2 * 0.9, fish.height/2, 0, 0, Math.PI * 2);
         
         if (fish.color === 'rainbow') {
             const gradient = ctx.createLinearGradient(0, 0, fish.width, 0);
-            gradient.addColorStop(0, '#FF0000');
-            gradient.addColorStop(0.2, '#FF7F00');
-            gradient.addColorStop(0.4, '#FFFF00');
-            gradient.addColorStop(0.6, '#00FF00');
-            gradient.addColorStop(0.8, '#0000FF');
-            gradient.addColorStop(1, '#8B00FF');
+            gradient.addColorStop(0, 'rgb(255, 0, 0)');
+            gradient.addColorStop(0.2, 'rgb(255, 127, 0)');
+            gradient.addColorStop(0.4, 'rgb(255, 255, 0)');
+            gradient.addColorStop(0.6, 'rgb(0, 255, 0)');
+            gradient.addColorStop(0.8, 'rgb(0, 0, 255)');
+            gradient.addColorStop(1, 'rgb(139, 0, 0)');
             ctx.fillStyle = gradient;
         } else {
             ctx.fillStyle = fish.color;
         }
         ctx.fill();
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
+        ctx.lineWidth = 1;
+        ctx.stroke(); // 添加描边让颜色更清晰
         
         // 绘制鱼鳍
         ctx.beginPath();
@@ -125,6 +131,7 @@ function generateUI() {
     // 鱼钩
     const hookCanvas = createCanvas(40, 40);
     const hookCtx = hookCanvas.getContext('2d');
+    hookCtx.clearRect(0, 0, 40, 40);
     hookCtx.fillStyle = '#808080';
     hookCtx.beginPath();
     hookCtx.arc(20, 20, 8, 0, Math.PI * 2);
@@ -140,6 +147,7 @@ function generateUI() {
     // 按钮（正常态）
     const btnNormalCanvas = createCanvas(300, 80);
     const btnNormalCtx = btnNormalCanvas.getContext('2d');
+    btnNormalCtx.clearRect(0, 0, 300, 80);
     // 背景
     btnNormalCtx.fillStyle = '#4CAF50';
     btnNormalCtx.fillRect(0, 0, 300, 80);
@@ -155,6 +163,7 @@ function generateUI() {
     // 按钮（按下态）
     const btnPressedCanvas = createCanvas(300, 80);
     const btnPressedCtx = btnPressedCanvas.getContext('2d');
+    btnPressedCtx.clearRect(0, 0, 300, 80);
     btnPressedCtx.fillStyle = '#45A049';
     btnPressedCtx.fillRect(0, 0, 300, 80);
     btnPressedCtx.strokeStyle = '#2E7D32';
@@ -165,6 +174,7 @@ function generateUI() {
     // 鱼线
     const lineCanvas = createCanvas(4, 400);
     const lineCtx = lineCanvas.getContext('2d');
+    lineCtx.clearRect(0, 0, 4, 400);
     lineCtx.fillStyle = '#C0C0C0';
     lineCtx.fillRect(1, 0, 2, 400);
     savePNG(lineCanvas, path.join(UI_DIR, 'line.png'));
