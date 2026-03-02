@@ -2,18 +2,75 @@
 
 ## 🚀 快速生成（推荐）
 
-### 步骤 1：安装依赖
+### 方法 1：使用自动安装脚本（最简单）
 
+#### macOS / Linux
 ```bash
 cd tools
-npm install
+bash install-dependencies.sh
 ```
 
-### 步骤 2：生成美术资源
-
+#### Windows
 ```bash
-npm run generate:assets
+cd tools
+install-dependencies.bat
 ```
+
+脚本会自动：
+1. 检测操作系统
+2. 安装系统依赖（cairo、pango 等）
+3. 安装 npm 包（canvas、wav）
+4. 验证安装
+
+#### 然后生成资源
+```bash
+npm run generate:all
+```
+
+---
+
+### 方法 2：手动安装
+
+#### macOS
+```bash
+# 1. 安装系统依赖
+brew install pkg-config cairo pango libpng jpeg giflib librsvg
+
+# 2. 安装 npm 包
+cd tools
+npm install canvas wav
+```
+
+#### Ubuntu/Debian
+```bash
+# 1. 安装系统依赖
+sudo apt-get update
+sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev pkg-config
+
+# 2. 安装 npm 包
+cd tools
+npm install canvas wav
+```
+
+#### Windows
+Windows 上安装 canvas 较复杂，建议：
+1. 使用 **PlaceholderCreator** 方案（无需 canvas）
+2. 或安装 [GTK+ 3.0](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer)
+3. 或使用 WSL（Windows Subsystem for Linux）
+
+详见：[QUICK_PLACEHOLDERS.md](QUICK_PLACEHOLDERS.md)
+
+---
+
+### 方法 3：使用 PlaceholderCreator（无需安装依赖）
+
+如果无法安装 canvas，可以使用 Cocos Creator 脚本快速创建占位资源：
+
+1. 在 Cocos Creator 中创建空节点
+2. 添加 `assets/scripts/PlaceholderCreator.ts` 脚本
+3. 运行游戏，自动创建所有占位 Sprite
+
+详见：[QUICK_PLACEHOLDERS.md](QUICK_PLACEHOLDERS.md)
 
 生成的文件：
 - `assets/textures/fish/` - 6 种鱼类图片
