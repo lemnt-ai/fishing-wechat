@@ -1,0 +1,25 @@
+{
+  "name": "fishing-wechat-assets",
+  "version": "1.0.0",
+  "description": "Asset generation tools for Fishing WeChat Game",
+  "main": "tools/generate-assets.js",
+  "scripts": {
+    "generate:assets": "node tools/generate-assets.js",
+    "generate:audio": "node tools/generate-audio.js",
+    "generate:all": "npm run generate:assets && npm run generate:audio"
+  },
+  "keywords": [
+    "game",
+    "assets",
+    "fishing",
+    "wechat",
+    "cocos-creator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "wav": "^1.0.2"
+  },
+  "devDependencies": {}
+}
