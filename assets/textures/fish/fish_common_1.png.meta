@@ -1,48 +1,45 @@
 {
-  "ver": "1.0.22",
+  "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "c3f7bcc42e564e919d2acfada3b0b03e",
+  "uuid": "3141bd60-e1d9-49fe-a91a-f837a94b17d5",
   "files": [
     ".json",
     ".png"
   ],
   "subMetas": {
-    "6c02a": {
+    "6c48a": {
       "importer": "texture",
-      "uuid": "d398750bb3c84cc0a8cb721689111151",
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
+      "uuid": "3141bd60-e1d9-49fe-a91a-f837a94b17d5@6c48a",
+      "displayName": "fish_common_1",
+      "id": "6c48a",
+      "name": "texture",
       "userData": {
-        "globsToTrim": null,
-        "imageType": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "quality": "100%",
-        "wrapModeS": "clamp-to-edge",
-        "wrapModeT": "clamp-to-edge",
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
-        "mipfilterMode": "auto",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUrl": "db://textures/fish/fish_common_1.png",
+        "imageUuidOrDatabaseUri": "3141bd60-e1d9-49fe-a91a-f837a94b17d5",
         "visible": false
       },
-      "displayName": "fish_common_1",
-      "id": "6c02a",
-      "name": "texture"
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
     }
   },
   "userData": {
     "type": "texture",
-    "redirect": "6c02a@6c02a",
+    "redirect": "3141bd60-e1d9-49fe-a91a-f837a94b17d5@6c48a",
     "hasAlpha": true,
     "isUuid": true,
     "imageUuidOrDatabaseUrl": "db://textures/fish/fish_common_1.png",
-    "visible": true
+    "visible": true,
+    "fixAlphaTransparencyArtifacts": false
   }
 }

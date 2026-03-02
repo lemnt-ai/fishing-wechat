@@ -1,48 +1,45 @@
 {
-  "ver": "1.0.22",
+  "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "dd85507b01d94ff29c5802dcd8c7ded7",
+  "uuid": "ed442287-2283-4c21-9c86-21171d53eda5",
   "files": [
     ".json",
     ".png"
   ],
   "subMetas": {
-    "6c02a": {
+    "6c48a": {
       "importer": "texture",
-      "uuid": "62f8695a489944d8a35fa0a45d84969b",
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
+      "uuid": "ed442287-2283-4c21-9c86-21171d53eda5@6c48a",
+      "displayName": "bubble_2",
+      "id": "6c48a",
+      "name": "texture",
       "userData": {
-        "globsToTrim": null,
-        "imageType": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "quality": "100%",
-        "wrapModeS": "clamp-to-edge",
-        "wrapModeT": "clamp-to-edge",
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
-        "mipfilterMode": "auto",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUrl": "db://textures/effects/bubble_2.png",
+        "imageUuidOrDatabaseUri": "ed442287-2283-4c21-9c86-21171d53eda5",
         "visible": false
       },
-      "displayName": "bubble_2",
-      "id": "6c02a",
-      "name": "texture"
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
     }
   },
   "userData": {
     "type": "texture",
-    "redirect": "6c02a@6c02a",
+    "redirect": "ed442287-2283-4c21-9c86-21171d53eda5@6c48a",
     "hasAlpha": true,
     "isUuid": true,
     "imageUuidOrDatabaseUrl": "db://textures/effects/bubble_2.png",
-    "visible": true
+    "visible": true,
+    "fixAlphaTransparencyArtifacts": false
   }
 }

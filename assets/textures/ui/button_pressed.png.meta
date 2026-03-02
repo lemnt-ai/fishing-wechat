@@ -1,48 +1,45 @@
 {
-  "ver": "1.0.22",
+  "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "afa3c2de701141a180b4f570ae5516a6",
+  "uuid": "7cab1e5e-215d-4dd4-b53e-6571f90cf340",
   "files": [
     ".json",
     ".png"
   ],
   "subMetas": {
-    "6c02a": {
+    "6c48a": {
       "importer": "texture",
-      "uuid": "55fd371d898c4ab7be54c86a082eda6b",
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
+      "uuid": "7cab1e5e-215d-4dd4-b53e-6571f90cf340@6c48a",
+      "displayName": "button_pressed",
+      "id": "6c48a",
+      "name": "texture",
       "userData": {
-        "globsToTrim": null,
-        "imageType": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "quality": "100%",
-        "wrapModeS": "clamp-to-edge",
-        "wrapModeT": "clamp-to-edge",
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
-        "mipfilterMode": "auto",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUrl": "db://textures/ui/button_pressed.png",
+        "imageUuidOrDatabaseUri": "7cab1e5e-215d-4dd4-b53e-6571f90cf340",
         "visible": false
       },
-      "displayName": "button_pressed",
-      "id": "6c02a",
-      "name": "texture"
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
     }
   },
   "userData": {
     "type": "texture",
-    "redirect": "6c02a@6c02a",
+    "redirect": "7cab1e5e-215d-4dd4-b53e-6571f90cf340@6c48a",
     "hasAlpha": true,
     "isUuid": true,
     "imageUuidOrDatabaseUrl": "db://textures/ui/button_pressed.png",
-    "visible": true
+    "visible": true,
+    "fixAlphaTransparencyArtifacts": false
   }
 }

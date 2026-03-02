@@ -1,48 +1,45 @@
 {
-  "ver": "1.0.22",
+  "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "abde8d0d2c3a43c69317d0b91bcab3fe",
+  "uuid": "2e4c787b-11bd-417d-8bf7-85bb791b24c1",
   "files": [
     ".json",
     ".png"
   ],
   "subMetas": {
-    "6c02a": {
+    "6c48a": {
       "importer": "texture",
-      "uuid": "42c05c9861aa4259893414772f60c833",
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
+      "uuid": "2e4c787b-11bd-417d-8bf7-85bb791b24c1@6c48a",
+      "displayName": "sparkle",
+      "id": "6c48a",
+      "name": "texture",
       "userData": {
-        "globsToTrim": null,
-        "imageType": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "quality": "100%",
-        "wrapModeS": "clamp-to-edge",
-        "wrapModeT": "clamp-to-edge",
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
-        "mipfilterMode": "auto",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUrl": "db://textures/effects/sparkle.png",
+        "imageUuidOrDatabaseUri": "2e4c787b-11bd-417d-8bf7-85bb791b24c1",
         "visible": false
       },
-      "displayName": "sparkle",
-      "id": "6c02a",
-      "name": "texture"
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
     }
   },
   "userData": {
     "type": "texture",
-    "redirect": "6c02a@6c02a",
+    "redirect": "2e4c787b-11bd-417d-8bf7-85bb791b24c1@6c48a",
     "hasAlpha": true,
     "isUuid": true,
     "imageUuidOrDatabaseUrl": "db://textures/effects/sparkle.png",
-    "visible": true
+    "visible": true,
+    "fixAlphaTransparencyArtifacts": false
   }
 }

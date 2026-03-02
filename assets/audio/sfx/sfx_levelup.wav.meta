@@ -2,13 +2,14 @@
   "ver": "1.0.0",
   "importer": "audio-clip",
   "imported": true,
-  "uuid": "5621614004d348b09397afff1c4bbe4a",
+  "uuid": "255e6af3-6b31-4a98-bfb5-b4617e29e350",
   "files": [
     ".json",
-    "wav"
+    ".wav"
   ],
   "subMetas": {},
   "userData": {
-    "isSubclip": false
+    "isSubclip": false,
+    "downloadMode": 0
   }
 }

@@ -1,48 +1,45 @@
 {
-  "ver": "1.0.22",
+  "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "2a6fd388c6ae436ba7f6de1693780596",
+  "uuid": "806488f9-dd74-49cb-b9c9-c8c9a5ba1ec3",
   "files": [
     ".json",
     ".png"
   ],
   "subMetas": {
-    "6c02a": {
+    "6c48a": {
       "importer": "texture",
-      "uuid": "fa338d9330894de9a1366ae811ac1d86",
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
+      "uuid": "806488f9-dd74-49cb-b9c9-c8c9a5ba1ec3@6c48a",
+      "displayName": "fish_legendary",
+      "id": "6c48a",
+      "name": "texture",
       "userData": {
-        "globsToTrim": null,
-        "imageType": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "quality": "100%",
-        "wrapModeS": "clamp-to-edge",
-        "wrapModeT": "clamp-to-edge",
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
-        "mipfilterMode": "auto",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUrl": "db://textures/fish/fish_legendary.png",
+        "imageUuidOrDatabaseUri": "806488f9-dd74-49cb-b9c9-c8c9a5ba1ec3",
         "visible": false
       },
-      "displayName": "fish_legendary",
-      "id": "6c02a",
-      "name": "texture"
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
     }
   },
   "userData": {
     "type": "texture",
-    "redirect": "6c02a@6c02a",
+    "redirect": "806488f9-dd74-49cb-b9c9-c8c9a5ba1ec3@6c48a",
     "hasAlpha": true,
     "isUuid": true,
     "imageUuidOrDatabaseUrl": "db://textures/fish/fish_legendary.png",
-    "visible": true
+    "visible": true,
+    "fixAlphaTransparencyArtifacts": false
   }
 }
