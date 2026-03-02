@@ -1,0 +1,33 @@
+{
+  "engine": "cocos-creator-js",
+  "packages": "https://registry.npmjs.org/",
+  "version": "3.8.0",
+  "id": "f8a9c3e2-1b4d-4f6a-9e8c-7d5b3a2c1f0e",
+  "name": "fishing-wechat",
+  "displayName": "钓鱼微信小游戏",
+  "description": "一个基于 Cocos Creator 3.8 的微信钓鱼小游戏",
+  "author": "lemnt-ai",
+  "scene": "assets/scenes/game.scene",
+  "startScene": "assets/scenes/game.scene",
+  "preview": {
+    "platform": "web-mobile",
+    "useDebugKeystroke": true
+  },
+  "build": {
+    "template": "default",
+    "polyfills": {
+      "asyncFunctions": true
+    },
+    "experimentalEraseModules": false,
+    "useBuiltinServer": false,
+    "server": ""
+  },
+  "facebook": {
+    "enable": false,
+    "appID": "",
+    "live": {
+      "enable": false
+    }
+  },
+  "lastModuleEvent": {}
+}

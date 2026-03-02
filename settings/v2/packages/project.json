@@ -1,0 +1,25 @@
+{
+  "general": {
+    "designResolution": {
+      "width": 750,
+      "height": 1334,
+      "fitWidth": false,
+      "fitHeight": true
+    }
+  },
+  "scripting": {
+    "scriptCompileMode": "debug",
+    "scriptDebugMode": true,
+    "typescript": {
+      "compile": true,
+      "experimentalDecorators": true,
+      "module": "commonjs",
+      "target": "es2015",
+      "sourceMap": true,
+      "typeRoots": [
+        "./temp/declarations",
+        "./extensions"
+      ]
+    }
+  }
+}
