@@ -53,6 +53,10 @@ export class GameManager extends Component {
     // 最高分
     private highScore: number = 0;
     
+    // 本局统计
+    private catchCount: number = 0; // 本局捕获数
+    private rareCatchCount: number = 0; // 本局稀有鱼捕获数
+    
     // 单例
     private static instance: GameManager | null = null;
     public static getInstance(): GameManager | null {
@@ -67,6 +71,32 @@ export class GameManager extends Component {
     start() {
         this.initUI();
         this.showMainMenu();
+        
+        // 初始化其他系统
+        this.initSystems();
+    }
+    
+    /**
+     * 初始化其他系统
+     */
+    initSystems() {
+        // 初始化连击系统
+        const comboSystem = this.getComponentInChildren(require('./ComboSystem').ComboSystem);
+        if (comboSystem) {
+            console.log('Combo system initialized');
+        }
+        
+        // 初始化特殊事件系统
+        const specialEventSystem = this.getComponentInChildren(require('./SpecialEventManager').SpecialEventManager);
+        if (specialEventSystem) {
+            console.log('Special event system initialized');
+        }
+        
+        // 初始化每日任务系统
+        const dailyTaskSystem = this.getComponentInChildren(require('./DailyTaskManager').DailyTaskManager);
+        if (dailyTaskSystem) {
+            console.log('Daily task system initialized');
+        }
     }
     
     /**
@@ -116,8 +146,24 @@ export class GameManager extends Component {
     startGame() {
         this.score = 0;
         this.gameTime = 0;
+        this.catchCount = 0;
+        this.rareCatchCount = 0;
         this.isPlaying = true;
         this.isPaused = false;
+        
+        // 重置连击系统
+        const ComboSystem = require('./ComboSystem').ComboSystem;
+        const comboSystem = ComboSystem.getInstance();
+        if (comboSystem) {
+            comboSystem.resetCombo();
+        }
+        
+        // 重置特殊事件系统
+        const SpecialEventManager = require('./SpecialEventManager').SpecialEventManager;
+        const specialEventManager = SpecialEventManager.getInstance();
+        if (specialEventManager) {
+            // 特殊事件系统会自动开始
+        }
         
         // 更新 UI
         this.updateUI();
@@ -139,21 +185,88 @@ export class GameManager extends Component {
             hookController.setOnFishCaught(this.onFishCaught.bind(this));
             hookController.setOnHookReturn(this.onHookReturn.bind(this));
         }
+        
+        console.log('🎮 Game started!');
     }
     
     /**
      * 捕获鱼回调
      */
     onFishCaught(fishNode: Node, score: number) {
+        // 检查是否是稀有鱼
+        const fishData = fishNode.getComponent(require('./FishManager').FishData);
+        const isRare = fishData && fishData.rarity >= 4;
+        
+        if (isRare) {
+            this.rareCatchCount++;
+            console.log('🌟 Rare fish caught!');
+        }
+        
+        this.catchCount++;
+        
+        // 应用连击系统
+        const ComboSystem = require('./ComboSystem').ComboSystem;
+        const comboSystem = ComboSystem.getInstance();
+        let finalScore = score;
+        
+        if (comboSystem) {
+            comboSystem.addCombo();
+            finalScore = comboSystem.calculateScore(score);
+        }
+        
+        // 应用特殊事件
+        const SpecialEventManager = require('./SpecialEventManager').SpecialEventManager;
+        const specialEventManager = SpecialEventManager.getInstance();
+        
+        if (specialEventManager && specialEventManager.isDoubleScore()) {
+            finalScore *= 2;
+            console.log('💎 Double score event!');
+        }
+        
         // 根据鱼饵等级增加得分加成
-        const bonus = 1 + (this.baitLevel - 1) * 0.1;
-        const finalScore = Math.floor(score * bonus);
+        const baitBonus = 1 + (this.baitLevel - 1) * 0.1;
+        finalScore = Math.floor(finalScore * baitBonus);
         
         this.score += finalScore;
         this.updateUI();
         
         // 检查是否升级
         this.checkLevelUp();
+        
+        // 更新成就和任务
+        this.updateAchievementsAndTasks(score, isRare);
+    }
+    
+    /**
+     * 更新成就和任务
+     */
+    updateAchievementsAndTasks(baseScore: number, isRare: boolean) {
+        // 更新成就
+        const AchievementManager = require('./AchievementManager').AchievementManager;
+        const achievementManager = AchievementManager.getInstance();
+        if (achievementManager) {
+            achievementManager.updateStats(1, baseScore, isRare);
+        }
+        
+        // 更新每日任务
+        const DailyTaskManager = require('./DailyTaskManager').DailyTaskManager;
+        const dailyTaskManager = DailyTaskManager.getInstance();
+        if (dailyTaskManager) {
+            dailyTaskManager.updateTaskProgress('catch_count', 1);
+            if (isRare) {
+                dailyTaskManager.updateTaskProgress('rare_catch', 1);
+            }
+            
+            // 检查连击任务
+            const ComboSystem = require('./ComboSystem').ComboSystem;
+            const comboSystem = ComboSystem.getInstance();
+            if (comboSystem) {
+                const combo = comboSystem.getCurrentCombo();
+                if (combo >= 5) {
+                    dailyTaskManager.updateTaskProgress('combo', 1);
+                }
+            }
+        }
     }
     
     /**
@@ -272,6 +385,22 @@ export class GameManager extends Component {
     gameOver() {
         this.isPlaying = false;
         
+        // 停止特殊事件
+        const SpecialEventManager = require('./SpecialEventManager').SpecialEventManager;
+        const specialEventManager = SpecialEventManager.getInstance();
+        if (specialEventManager) {
+            // 特殊事件会自动结束
+        }
+        
+        // 检查完美游戏成就
+        if (this.catchCount >= 20) {
+            const DailyTaskManager = require('./DailyTaskManager').DailyTaskManager;
+            const dailyTaskManager = DailyTaskManager.getInstance();
+            if (dailyTaskManager) {
+                dailyTaskManager.updateTaskProgress('perfect_game', 1);
+            }
+        }
+        
         // 更新最高分
         if (this.score > this.highScore) {
             this.highScore = this.score;
@@ -283,7 +412,23 @@ export class GameManager extends Component {
             this.gameOverPanel.active = true;
         }
         if (this.finalScoreLabel) {
-            this.finalScoreLabel.string = `最终得分：${this.score}`;
+            this.finalScoreLabel.string = `最终得分：${this.score}\n捕获：${this.catchCount}条 | 稀有：${this.rareCatchCount}条`;
+        }
+        
+        // 提交分数到排行榜
+        this.submitToLeaderboard();
+        
+        console.log(`🏁 Game Over! Score: ${this.score}, Catches: ${this.catchCount}`);
+    }
+    
+    /**
+     * 提交分数到排行榜
+     */
+    submitToLeaderboard() {
+        const Leaderboard = require('./Leaderboard').Leaderboard;
+        const leaderboard = Leaderboard.getInstance();
+        if (leaderboard) {
+            leaderboard.submitScore(this.score);
         }
     }
     

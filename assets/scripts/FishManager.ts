@@ -131,10 +131,39 @@ export class FishManager extends Component {
      * 根据稀有度权重选择鱼类
      */
     private selectFishByRarity(): FishType {
-        // 稀有度权重：稀有度越高，出现概率越低
-        const weights = [40, 30, 15, 10, 4, 1]; // 对应 6 种鱼
+        // 检查特殊事件
+        const SpecialEventManager = require('./SpecialEventManager').SpecialEventManager;
+        const specialEventManager = SpecialEventManager.getInstance();
+        
+        let modifiers: any = { goldenRush: false, deepSeaOnly: false, treasureSpawn: false };
+        if (specialEventManager) {
+            modifiers = specialEventManager.getFishSpawnModifiers();
+        }
+        
+        // 基础权重
+        let weights = [40, 30, 15, 10, 4, 1]; // 对应 6 种鱼
+        
+        // 应用黄金狂潮事件
+        if (modifiers.goldenRush) {
+            weights[4] *= 3; // 金龙鱼概率提升 3 倍
+            weights[5] *= 2; // 神秘鱼概率提升 2 倍
+            console.log('🌟 Golden Rush event active!');
+        }
+        
+        // 应用宝藏事件
+        if (modifiers.treasureSpawn) {
+            weights[5] *= 5; // 神秘鱼概率大幅提升
+            console.log('💰 Treasure event active!');
+        }
+        
+        // 应用深海挑战事件
+        if (modifiers.deepSeaOnly) {
+            weights = [0, 0, 0, 10, 20, 10]; // 只出现深海鱼
+            console.log('🌊 Deep sea challenge active!');
+        }
+        
         const totalWeight = weights.reduce((a, b) => a + b, 0);
-        const random = math.random() * totalWeight;
+        const random = Math.random() * totalWeight;
         
         let cumulative = 0;
         for (let i = 0; i < this.fishTypes.length; i++) {

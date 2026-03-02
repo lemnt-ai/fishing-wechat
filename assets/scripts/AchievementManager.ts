@@ -105,6 +105,26 @@ export class AchievementManager extends Component {
             reward: 1000,
             unlocked: false,
             progress: 0
+        },
+        {
+            id: 'combo_5',
+            name: '连击新手',
+            description: '达成 5 连击',
+            condition: 'combo',
+            target: 5,
+            reward: 150,
+            unlocked: false,
+            progress: 0
+        },
+        {
+            id: 'combo_10',
+            name: '连击高手',
+            description: '达成 10 连击',
+            condition: 'combo',
+            target: 10,
+            reward: 300,
+            unlocked: false,
+            progress: 0
         }
     ];
     
@@ -113,7 +133,8 @@ export class AchievementManager extends Component {
         totalCatchCount: 0,
         totalScore: 0,
         maxSingleScore: 0,
-        rareFishCount: 0
+        rareFishCount: 0,
+        maxCombo: 0
     };
     
     // 单例
@@ -135,7 +156,7 @@ export class AchievementManager extends Component {
     /**
      * 更新统计数据
      */
-    updateStats(catchCount: number = 0, score: number = 0, isRare: boolean = false) {
+    updateStats(catchCount: number = 0, score: number = 0, isRare: boolean = false, combo: number = 0) {
         if (catchCount > 0) {
             this.stats.totalCatchCount += catchCount;
         }
@@ -147,6 +168,11 @@ export class AchievementManager extends Component {
         }
         if (isRare) {
             this.stats.rareFishCount++;
+        }
+        if (combo > 0) {
+            if (combo > this.stats.maxCombo) {
+                this.stats.maxCombo = combo;
+            }
         }
         
         this.saveStats();
@@ -178,6 +204,9 @@ export class AchievementManager extends Component {
                     break;
                 case 'equipment_max':
                     progress = this.getMaxEquipmentLevel();
+                    break;
+                case 'combo':
+                    progress = this.stats.maxCombo;
                     break;
             }
             
