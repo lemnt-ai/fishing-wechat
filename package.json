@@ -1,0 +1,20 @@
+{
+  "name": "fishing-wechat",
+  "version": "1.0.0",
+  "description": "钓鱼微信小游戏 - 基于 Cocos Creator 3.8.8",
+  "author": "lemnt-ai",
+  "license": "MIT",
+  "scripts": {
+    "build": "echo 'Use Cocos Creator Builder instead'",
+    "preview": "echo 'Use Cocos Creator Preview instead'"
+  },
+  "dependencies": {
+    "@types/node": "^16.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
