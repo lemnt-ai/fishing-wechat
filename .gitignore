@@ -1,0 +1,40 @@
+# Cocos Creator
+/[Ll]ibrary/
+/[Tt]emp/
+/[Ll]ogs/
+/[Bb]uild/
+/[Oo]bj/
+*.pid
+*.lock
+*.dll
+*.exe
+*.so
+*.dylib
+*.ipa
+*.apk
+*.app
+*.xcodeproj
+*.xcworkspace
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Node modules
+node_modules/
+
+# 构建输出
+build/
+temp/
+
+# 敏感信息
+*.pem
+*.key
+*.p12
+project.config.json
