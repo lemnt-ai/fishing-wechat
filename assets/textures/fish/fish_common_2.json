@@ -1,0 +1,15 @@
+{
+  "type": "fish",
+  "name": "fish_common_2",
+  "label": "鲫鱼",
+  "color": {
+    "r": 74,
+    "g": 144,
+    "b": 226
+  },
+  "size": {
+    "width": 90,
+    "height": 55
+  },
+  "instruction": "在 Cocos Creator 中创建 Sprite，设置 Color 为 RGB(74, 144, 226)，大小为 90x55"
+}

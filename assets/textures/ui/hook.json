@@ -1,0 +1,14 @@
+{
+  "type": "ui",
+  "name": "hook",
+  "color": {
+    "r": 128,
+    "g": 128,
+    "b": 128
+  },
+  "size": {
+    "width": 40,
+    "height": 40
+  },
+  "instruction": "创建圆形 Sprite，添加钩子形状"
+}

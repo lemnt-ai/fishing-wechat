@@ -1,0 +1,14 @@
+{
+  "type": "ui",
+  "name": "button_pressed",
+  "color": {
+    "r": 69,
+    "g": 160,
+    "b": 73
+  },
+  "size": {
+    "width": 300,
+    "height": 80
+  },
+  "instruction": "创建深绿色按钮 Sprite"
+}

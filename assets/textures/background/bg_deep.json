@@ -1,0 +1,21 @@
+{
+  "type": "background",
+  "name": "bg_deep",
+  "gradient": [
+    {
+      "r": 30,
+      "g": 144,
+      "b": 255
+    },
+    {
+      "r": 0,
+      "g": 0,
+      "b": 139
+    }
+  ],
+  "size": {
+    "width": 720,
+    "height": 680
+  },
+  "instruction": "创建深蓝渐变背景"
+}

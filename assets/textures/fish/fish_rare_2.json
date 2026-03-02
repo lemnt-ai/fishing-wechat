@@ -1,0 +1,15 @@
+{
+  "type": "fish",
+  "name": "fish_rare_2",
+  "label": "鲤鱼王",
+  "color": {
+    "r": 155,
+    "g": 89,
+    "b": 182
+  },
+  "size": {
+    "width": 110,
+    "height": 65
+  },
+  "instruction": "在 Cocos Creator 中创建 Sprite，设置 Color 为 RGB(155, 89, 182)，大小为 110x65"
+}
