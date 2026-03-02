@@ -1,0 +1,48 @@
+{
+  "ver": "1.0.22",
+  "importer": "image",
+  "imported": true,
+  "uuid": "afa3c2de701141a180b4f570ae5516a6",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c02a": {
+      "importer": "texture",
+      "uuid": "55fd371d898c4ab7be54c86a082eda6b",
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "globsToTrim": null,
+        "imageType": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "quality": "100%",
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "mipfilterMode": "auto",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUrl": "db://textures/ui/button_pressed.png",
+        "visible": false
+      },
+      "displayName": "button_pressed",
+      "id": "6c02a",
+      "name": "texture"
+    }
+  },
+  "userData": {
+    "type": "texture",
+    "redirect": "6c02a@6c02a",
+    "hasAlpha": true,
+    "isUuid": true,
+    "imageUuidOrDatabaseUrl": "db://textures/ui/button_pressed.png",
+    "visible": true
+  }
+}

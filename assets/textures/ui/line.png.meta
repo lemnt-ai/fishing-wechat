@@ -1,0 +1,48 @@
+{
+  "ver": "1.0.22",
+  "importer": "image",
+  "imported": true,
+  "uuid": "ccedbf719c574d1db20e9f0c51039a11",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c02a": {
+      "importer": "texture",
+      "uuid": "1d6c1e88545c40cb9efec6a081b9535c",
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "globsToTrim": null,
+        "imageType": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "quality": "100%",
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "mipfilterMode": "auto",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUrl": "db://textures/ui/line.png",
+        "visible": false
+      },
+      "displayName": "line",
+      "id": "6c02a",
+      "name": "texture"
+    }
+  },
+  "userData": {
+    "type": "texture",
+    "redirect": "6c02a@6c02a",
+    "hasAlpha": true,
+    "isUuid": true,
+    "imageUuidOrDatabaseUrl": "db://textures/ui/line.png",
+    "visible": true
+  }
+}

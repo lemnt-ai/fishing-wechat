@@ -1,0 +1,48 @@
+{
+  "ver": "1.0.22",
+  "importer": "image",
+  "imported": true,
+  "uuid": "3d793c2b240d4ec093c5b4b9de9de6a4",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c02a": {
+      "importer": "texture",
+      "uuid": "d1efa3a857cd4f7092e116a369de7676",
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "globsToTrim": null,
+        "imageType": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "quality": "100%",
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "mipfilterMode": "auto",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUrl": "db://textures/effects/bubble_1.png",
+        "visible": false
+      },
+      "displayName": "bubble_1",
+      "id": "6c02a",
+      "name": "texture"
+    }
+  },
+  "userData": {
+    "type": "texture",
+    "redirect": "6c02a@6c02a",
+    "hasAlpha": true,
+    "isUuid": true,
+    "imageUuidOrDatabaseUrl": "db://textures/effects/bubble_1.png",
+    "visible": true
+  }
+}

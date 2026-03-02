@@ -1,0 +1,48 @@
+{
+  "ver": "1.0.22",
+  "importer": "image",
+  "imported": true,
+  "uuid": "959a77bec07f432ea6ef01258ed8d9f0",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c02a": {
+      "importer": "texture",
+      "uuid": "e4d827f181c445e780bb3fc4a3787be6",
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "globsToTrim": null,
+        "imageType": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "quality": "100%",
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "mipfilterMode": "auto",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUrl": "db://textures/fish/fish_rare_2.png",
+        "visible": false
+      },
+      "displayName": "fish_rare_2",
+      "id": "6c02a",
+      "name": "texture"
+    }
+  },
+  "userData": {
+    "type": "texture",
+    "redirect": "6c02a@6c02a",
+    "hasAlpha": true,
+    "isUuid": true,
+    "imageUuidOrDatabaseUrl": "db://textures/fish/fish_rare_2.png",
+    "visible": true
+  }
+}
